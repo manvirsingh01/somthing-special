@@ -133,6 +133,17 @@ h1 {
     color: white;
 }
 
+.educational-message {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.educational-message a {
+    color: #4facfe;
+    text-decoration: underline;
+}
+
 .meme-img {
     max-width: 100%;
     border-radius: 10px;
