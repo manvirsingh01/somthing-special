@@ -1,0 +1,217 @@
+:root {
+    --primary-color: #6C63FF;
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --hacked-bg: #000;
+    --hacked-text: #0f0;
+    --hacked-alert: #f00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Friendly Loading Screen */
+#loading-screen {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #333;
+    text-align: center;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.1s linear;
+}
+
+/* Hacked Screen */
+#hacked-screen {
+    background-color: var(--hacked-bg);
+    color: var(--hacked-text);
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+}
+
+.glitch {
+    font-size: 4rem;
+    color: var(--hacked-alert);
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+.terminal-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.warning-box {
+    margin-top: 3rem;
+    border: 2px solid var(--hacked-alert);
+    padding: 1rem;
+    color: var(--hacked-alert);
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: blink 0.5s infinite;
+}
+
+/* Recovery Screen */
+#recovery-screen {
+    background: #2c3e50;
+    color: white;
+}
+
+.primary-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: transform 0.2s;
+    font-family: 'Outfit', sans-serif;
+}
+
+.primary-btn:hover {
+    transform: scale(1.05);
+    background: #c0392b;
+}
+
+/* Prank Screen */
+#prank-screen {
+    background: #000;
+    color: white;
+}
+
+.meme-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes glitch {
+    0% {
+        transform: translate(0)
+    }
+
+    20% {
+        transform: translate(-2px, 2px)
+    }
+
+    40% {
+        transform: translate(-2px, -2px)
+    }
+
+    60% {
+        transform: translate(2px, 2px)
+    }
+
+    80% {
+        transform: translate(2px, -2px)
+    }
+
+    100% {
+        transform: translate(0)
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .glitch {
+        font-size: 2.5rem;
+    }
+
+    .terminal-text {
+        font-size: 1rem;
+    }
+
+    .big-warning {
+        font-size: 2rem;
+    }
+
+    .primary-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Updated Color */
+.big-warning {
+    color: #FF4500;
+    /* Red-Orange for better visibility */
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
