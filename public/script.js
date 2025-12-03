@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(hackInterval);
                 setTimeout(() => {
                     hackedScreen.classList.remove('active');
-                    recoveryScreen.classList.add('active');
+                    prankScreen.classList.add('active');
                 }, 2000);
                 return;
             }
@@ -57,10 +57,4 @@ document.addEventListener('DOMContentLoaded', () => {
             i++;
         }, 800);
     }
-
-    // 3. Handle Recovery Button Click
-    recoverBtn.addEventListener('click', () => {
-        recoveryScreen.classList.remove('active');
-        prankScreen.classList.add('active');
-    });
 });
